@@ -179,7 +179,7 @@ function IncomeSetup({ onSubmit }) {
             <h3>Income Distribution</h3>
             {totalIncome > 0 ? (
               <div className="pie-chart-container">
-                <svg width="300" height="300" viewBox="0 0 300 300" className="pie-chart">
+                <svg viewBox="0 0 300 300" className="pie-chart" preserveAspectRatio="xMidYMid meet">
                   {piePaths.map((item, index) => (
                     <g key={index}>
                       <path

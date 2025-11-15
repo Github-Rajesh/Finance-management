@@ -12,6 +12,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #f5f7fa;
   min-height: 100vh;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 /* Hide number input spinners */

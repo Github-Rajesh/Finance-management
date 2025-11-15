@@ -7,6 +7,8 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .dashboard-header h2 {
@@ -15,6 +17,32 @@
   color: #111827;
   margin: 0;
   letter-spacing: -0.02em;
+}
+
+.dashboard-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.download-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+  white-space: nowrap;
+}
+
+.download-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
 }
 
 .edit-btn {
@@ -28,6 +56,7 @@
   font-weight: 600;
   transition: all 0.2s ease;
   box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+  white-space: nowrap;
 }
 
 .edit-btn:hover {
@@ -355,17 +384,252 @@
 }
 
 @media (max-width: 768px) {
-  .categories-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .overview-cards {
-    grid-template-columns: 1fr;
+  .dashboard {
+    padding: 10px 0;
   }
   
   .dashboard-header {
     flex-direction: column;
     gap: 16px;
     align-items: flex-start;
+    margin-bottom: 24px;
+  }
+  
+  .dashboard-header h2 {
+    font-size: 1.75rem;
+  }
+  
+  .dashboard-actions {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .download-btn,
+  .edit-btn {
+    width: 100%;
+    padding: 12px;
+  }
+  
+  .overview-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  
+  .overview-card {
+    padding: 20px;
+  }
+  
+  .card-icon {
+    font-size: 2rem;
+  }
+  
+  .card-content .amount {
+    font-size: 1.5rem;
+  }
+  
+  .progress-section {
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+  
+  .progress-section h3 {
+    font-size: 1.15rem;
+  }
+  
+  .categories-section {
+    padding: 24px 20px;
+    margin-bottom: 24px;
+  }
+  
+  .categories-section h3 {
+    font-size: 1.35rem;
+    margin-bottom: 20px;
+  }
+  
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .category-dashboard-card {
+    padding: 16px;
+  }
+  
+  .income-breakdown {
+    padding: 24px 20px;
+  }
+  
+  .income-breakdown h3 {
+    font-size: 1.35rem;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+    padding: 0;
+  }
+  
+  .dashboard-header {
+    margin-bottom: 20px;
+  }
+  
+  .dashboard-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .dashboard-actions {
+    width: 100%;
+  }
+  
+  .download-btn,
+  .edit-btn {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+  
+  .overview-cards {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .overview-card {
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .card-icon {
+    font-size: 1.75rem;
+  }
+  
+  .card-content h3 {
+    font-size: 0.8rem;
+  }
+  
+  .card-content .amount {
+    font-size: 1.35rem;
+  }
+  
+  .card-content .subtext {
+    font-size: 0.8rem;
+  }
+  
+  .progress-section {
+    padding: 16px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+  }
+  
+  .progress-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+  
+  .progress-bar-container {
+    height: 32px;
+  }
+  
+  .progress-bar {
+    font-size: 0.85rem;
+  }
+  
+  .categories-section {
+    padding: 20px 16px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+  }
+  
+  .categories-section h3 {
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+  }
+  
+  .categories-grid {
+    gap: 12px;
+  }
+  
+  .category-dashboard-card {
+    padding: 16px;
+  }
+  
+  .category-dashboard-header h4 {
+    font-size: 1.05rem;
+  }
+  
+  .stat-item {
+    padding: 6px 0;
+    margin-bottom: 8px;
+  }
+  
+  .stat-label {
+    font-size: 0.85rem;
+  }
+  
+  .stat-value {
+    font-size: 0.9rem;
+  }
+  
+  .stat-item.highlight-stat {
+    padding: 10px;
+  }
+  
+  .subcategory-item {
+    padding: 8px 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .subcategory-name {
+    font-size: 0.85rem;
+    flex: 1 1 100%;
+  }
+  
+  .subcategory-amount {
+    font-size: 0.9rem;
+  }
+  
+  .progress-info {
+    font-size: 0.75rem;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .income-breakdown {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+  
+  .income-breakdown h3 {
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+  }
+  
+  .income-list {
+    gap: 10px;
+  }
+  
+  .income-item-dashboard {
+    padding: 12px 16px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .income-name {
+    font-size: 0.9rem;
+    flex: 1 1 100%;
+  }
+  
+  .income-amount {
+    font-size: 1rem;
+    margin-right: 0;
+  }
+  
+  .income-percentage {
+    font-size: 0.85rem;
+    padding: 4px 10px;
   }
 }

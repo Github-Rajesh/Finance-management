@@ -1,19 +1,21 @@
 .App {
   min-height: 100vh;
-  padding: 30px 20px;
+  padding: 20px 16px;
   background: #f5f7fa;
 }
 
 .app-header {
   max-width: 1400px;
-  margin: 0 auto 40px;
+  margin: 0 auto 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .app-header h1 {
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: #111827;
   margin: 0;
@@ -27,9 +29,10 @@
   padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .reset-btn:hover {
@@ -40,4 +43,29 @@
 .app-main {
   max-width: 1400px;
   margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .App {
+    padding: 30px 20px;
+  }
+  
+  .app-header {
+    margin-bottom: 40px;
+  }
+  
+  .app-header h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .reset-btn {
+    width: 100%;
+  }
 }
