@@ -362,6 +362,13 @@ function Dashboard({ incomeData, budgetData, onEdit }) {
           ))}
         </div>
       </div>
+
+      {/* Download PDF Section */}
+      <div className="download-section">
+        <button className="download-btn-large" onClick={downloadPDF}>
+          📥 Download Budget Report as PDF
+        </button>
+      </div>
     </div>
   );
 }
