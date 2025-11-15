@@ -17,7 +17,6 @@ function Dashboard({ incomeData, budgetData, onEdit }) {
     const tableWidth = pageWidth - (2 * margin);
     const col1Width = tableWidth * 0.35; // Category
     const col2Width = tableWidth * 0.40; // Details
-    const col3Width = tableWidth * 0.25; // Amount
 
     // Title
     doc.setFontSize(18);
