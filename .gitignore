@@ -9,6 +9,13 @@
 # Production
 /build
 
+# Python Virtual Environment
+/bplanner
+/venv
+/env
+*.pyc
+__pycache__/
+
 # Misc
 .DS_Store
 .env.local
